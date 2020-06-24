@@ -1,22 +1,33 @@
 import React from "react"
-import { Link } from "gatsby"
+import { graphql } from "gatsby"
+import Layout from '../components/Layout/Layout.js'
 
-import Layout from "../components/layout"
-import Image from "../components/image"
-import SEO from "../components/seo"
-
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
-
-export default IndexPage
+export default function Index({
+  data, // this prop will be injected by the GraphQL query below.
+}) {
+  const { markdownRemark } = data // data.markdownRemark holds your post data
+  const { frontmatter, html } = markdownRemark
+  
+  return (
+    <Layout>
+      <title>Auto Parts Consolidator - Buy and sell Aftermarket auto parts</title>
+      <div className="bg-gray-100">
+          <h1 className="index-title">{frontmatter.title}</h1>
+          <div
+            className="index"
+            dangerouslySetInnerHTML={{ __html: html }}
+          />
+      </div>
+    </Layout>
+  )
+}
+export const pageQuery = graphql`
+  query {
+    markdownRemark {
+      html
+      frontmatter {
+        title
+      }
+    }
+  }
+`
