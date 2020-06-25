@@ -1,4 +1,46 @@
-.index-container {
+.index {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+ 
+}
+
+.index__splash {
     margin: 0 auto;
     width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5), 
+        rgba(0, 0, 0, 0.5)
+      ), url("../images/cars.jpeg");
+    background-repeat: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.index__container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.on_scroll {
+   grid-gap: 10px;
+}
+
+.on_scroll img {
+   width: 60vw;
+   height: 60vh;
+}
+
+@media only screen and (max-width: 640px) {
+    .index__splash {
+        height: 70vh;
+    }
+    .on_scroll_brands {
+        height: 70vh;
+    }
+    .on_scroll_products {
+        height: 70vh;
+    }
 }

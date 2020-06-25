@@ -1,7 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/Layout/Layout.js"
-import { Solid } from "../components/Icons/Icons"
+import './index.css'
+// import { Solid } from "../components/Icons/Icons"
+import CarInterior from "../images/car_interior.jpeg";
+import Engine from '../images/car_engine.jpeg';
 
 export default function Index({
   data, // this prop will be injected by the GraphQL query below.
@@ -11,38 +14,37 @@ export default function Index({
 
   return (
     <Layout>
-      <div className="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-md cursor-pointer hover:bg-blue-700">
+      {/* <div className="flex items-center justify-center w-12 h-12 bg-blue-500 rounded-md cursor-pointer hover:bg-blue-700">
         <Solid.Bell className="w-6 h-6 text-white" />
-      </div>
-      <h1>Auto Parts Consolidator - Buy and sell Aftermarket auto parts</h1>
-      <div className="">
-        <h1 className="index-title">{frontmatter.title}</h1>
-        <div className="index" dangerouslySetInnerHTML={{ __html: html }} />
-      </div>
-      <div class="md:flex">
-        <div class="md:flex-shrink-0">
-          <img
-            class="rounded-lg md:w-56"
-            src="https://images.unsplash.com/photo-1556740738-b6a63e27c4df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=448&q=80"
-            alt="Woman paying for a purchase"
-          />
-        </div>
-        <div class="mt-4 md:mt-0 md:ml-6">
-          <div class="uppercase tracking-wide text-sm text-indigo-600 font-bold">
-            Marketing
+      </div> */}
+     
+        <div>
+          <div className="index__splash">
+            <div className="index__container sm:text-5xl text-4xl text-center text-white font-normal text-white">
+              <h1 className="index__title">{frontmatter.title}</h1>
+              <div className="text-2xl m-4" dangerouslySetInnerHTML={{ __html: html }} />
+              <button className="border border-white rounded m-4 ">
+                {frontmatter.action_button}
+              </button>
+            </div>
+
           </div>
-          <a
-            href="#"
-            class="block mt-1 text-lg leading-tight font-semibold text-gray-900 hover:underline"
-          >
-            Finding customers for your new business
-          </a>
-          <p class="mt-2 text-gray-600">
-            Getting a new business off the ground is a lot of hard work. Here
-            are five ideas you can use to find your first customers.
-          </p>
+            <div className="on_scroll relative text-center lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
+              <div className="on_scroll_brands">
+                <div className="flex justify-center">
+                  <img className="object-cover" src={Engine} />
+                </div>
+                <button className="border border-black p-2 m-2">Search by Brand</button>
+              </div>
+              <div className="on_scroll_products ">
+                <div className="flex justify-center">
+                  <img className="object-cover" src={CarInterior} />
+                </div>
+                <button className="border border-black p-2 m-2">Search by Product</button>
+              </div>
+            </div>
         </div>
-      </div>
+  
     </Layout>
   )
 }
@@ -52,6 +54,7 @@ export const pageQuery = graphql`
       html
       frontmatter {
         title
+        action_button
       }
     }
   }

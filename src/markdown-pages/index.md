@@ -1,4 +1,5 @@
 ---
-title: Welcome to Auto Parts Consolidator
+title: Auto Parts Consolidator
+action_button:  SHOP NOW
 ---
-SHOP NOW
+Buy and sell Aftermarket auto parts
