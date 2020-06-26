@@ -23,7 +23,7 @@ export default function Index({
             <div className="index__container sm:text-5xl text-4xl text-center text-white font-normal text-white">
               <h1 className="index__title">{frontmatter.title}</h1>
               <div className="text-2xl m-4" dangerouslySetInnerHTML={{ __html: html }} />
-              <button className="border border-white rounded m-4 ">
+              <button className="border border-white rounded m-4 hover:bg-white hover:text-black hover:border-black">
                 {frontmatter.action_button}
               </button>
             </div>
@@ -34,13 +34,13 @@ export default function Index({
                 <div className="flex justify-center">
                   <img className="object-cover" src={Engine} />
                 </div>
-                <button className="border border-black p-2 m-2">Search by Brand</button>
+                <button className="border border-black p-2 m-2 hover:bg-black hover:text-white">Search by Brand</button>
               </div>
               <div className="on_scroll_products ">
                 <div className="flex justify-center">
                   <img className="object-cover" src={CarInterior} />
                 </div>
-                <button className="border border-black p-2 m-2">Search by Product</button>
+                <button className="border border-black p-2 m-2 hover:bg-black hover:text-white">Search by Product</button>
               </div>
             </div>
         </div>

@@ -1,0 +1,17 @@
+.product_container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.product {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-image-container {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
