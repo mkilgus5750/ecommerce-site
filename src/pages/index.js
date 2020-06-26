@@ -1,11 +1,11 @@
 import React from "react"
-import { graphql } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout/Layout.js"
 import './index.css'
 // import { Solid } from "../components/Icons/Icons"
-import CarInterior from "../images/car_interior.jpeg";
-import Engine from '../images/car_engine.jpeg';
-
+import goldFlute from "../images/gold_headjoint.jpg"
+import sankyoFlute from '../images/sankyo_flute(4).jpg'
+import sankyoFlutes from '../images/sankyo_flutes.jpg'
 export default function Index({
   data, // this prop will be injected by the GraphQL query below.
 }) {
@@ -32,15 +32,15 @@ export default function Index({
             <div className="on_scroll relative text-center lg:grid lg:grid-cols-2 lg:gap-8 lg:items-center">
               <div className="on_scroll_brands">
                 <div className="flex justify-center">
-                  <img className="object-cover" src={Engine} />
+                  <img className="object-cover p-2" src={sankyoFlute} />
                 </div>
-                <button className="border border-black p-2 m-2 hover:bg-black hover:text-white">Search by Brand</button>
+                <Link to='/brands'><button className="border border-black p-2 m-2 hover:bg-black hover:text-white">Search by Brand</button></Link>
               </div>
               <div className="on_scroll_products ">
                 <div className="flex justify-center">
-                  <img className="object-cover" src={CarInterior} />
+                  <img className="object-cover p-2" src={goldFlute} />
                 </div>
-                <button className="border border-black p-2 m-2 hover:bg-black hover:text-white">Search by Product</button>
+                <Link to='/productList'><button className="border border-black p-2 m-2 hover:bg-black hover:text-white">Search by Product</button></Link>
               </div>
             </div>
         </div>

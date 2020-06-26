@@ -1,7 +1,6 @@
 import React from "react"
 import Layout from "../components/Layout/Layout"
 import './product.css'
-import productPlaceholder from '../images/car_something.jpeg'
 import { Outline } from "../components/Icons/Icons"
 
 const ProductTemplate = ({ pageContext }) => {
@@ -12,7 +11,9 @@ const ProductTemplate = ({ pageContext }) => {
         <div className="product p-6">
           <h1 className="pb-6 text-blue-400 text-bold text-xl" >{product.title}</h1>
           <div className="product-image-container">
-            <img className="h-auto w-64" src={productPlaceholder} />
+            {/* {node.images[0].localFile && (
+                    <Img className="object-contain w-full h-full" fluid={node.images[0].localFile.childImageSharp.fluid} />
+                  )} */}
           </div>
           <div className="price-quantity">
             <div className="product_price">

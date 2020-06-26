@@ -14,7 +14,7 @@
     background-image: linear-gradient(
         rgba(0, 0, 0, 0.5), 
         rgba(0, 0, 0, 0.5)
-      ), url("../images/cars.jpeg");
+      ), url('../images/sankyo_flute(3).jpg');
     background-repeat: none;
     background-position: center;
     background-repeat: no-repeat;
@@ -31,10 +31,10 @@
    grid-gap: 10px;
 }
 
-/* .on_scroll img {
+.on_scroll img {
    width: 60vw;
    height: 60vh;
-} */
+} 
 
 @media only screen and (max-width: 640px) {
     .index__splash {
